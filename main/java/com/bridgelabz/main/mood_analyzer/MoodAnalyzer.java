@@ -20,7 +20,7 @@ public class MoodAnalyzer {
 		mood.analyzeMood();
 	}
 
-	private String analyzeMood() 
+	public String analyzeMood() 
 	{		
 		if(this.message.contains("sad"))
 			return "SAD";
