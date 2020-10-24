@@ -3,13 +3,14 @@ package com.bridgelabz.test.mood_analyzer;
 import org.junit.Assert;
 import org.junit.Test;
 
+import com.bridgelabz.main.mood_analyzer.MoodAnalysisException;
 import com.bridgelabz.main.mood_analyzer.MoodAnalyzer;
 
 public class MoodAnalzyerTest 
 {
 	
 	@Test
-	public void givenIamSad_Whenproper_ShouldReturnSAD()
+	public void givenIamSadMood_ShouldReturnSAD()
 	{
 		MoodAnalyzer moodObj = new MoodAnalyzer("I am sad");
 		String result = moodObj.analyzeMood();
@@ -17,18 +18,17 @@ public class MoodAnalzyerTest
 	}
 	
 	@Test
-	public void givenIamAnyMood_WhenProper_ShouldReturnHAPPY()
+	public void givenIamAnyMood_ShouldReturnHAPPY()
 	{
 		MoodAnalyzer moodObj = new MoodAnalyzer("I am happy");
 		String result = moodObj.analyzeMood();
 		Assert.assertEquals("HAPPY", result);
 	}
 	
-	@Test
-	public void givenNullMood_ShouldReturnHAPPY()
+	@Test (expected  = MoodAnalysisException.class)
+	public void givenNullMood_ShouldThrowMoodAnalysisException()
 	{
 		MoodAnalyzer moodObj = new MoodAnalyzer();
 		String result = moodObj.analyzeMood();
-		Assert.assertEquals("HAPPY", result);
 	}
 }
