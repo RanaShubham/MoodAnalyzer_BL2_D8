@@ -7,20 +7,12 @@ import com.bridgelabz.main.mood_analyzer.MoodAnalyzer;
 
 public class MoodAnalzyerTest 
 {
+	static MoodAnalyzer moodObj = new MoodAnalyzer("I am sad");
 	
 	@Test
 	public void givenIamSad_Whenproper_ShouldReturnSAD()
 	{
-		MoodAnalyzer moodObj = new MoodAnalyzer("I am sad");
 		String result = moodObj.analyzeMood();
 		Assert.assertEquals("SAD", result);
-	}
-	
-	@Test
-	public void givenIamAnyMood_WhenProper_ShouldReturnHAPPY()
-	{
-		MoodAnalyzer moodObj = new MoodAnalyzer("I am happy");
-		String result = moodObj.analyzeMood();
-		Assert.assertEquals("HAPPY", result);
 	}
 }
