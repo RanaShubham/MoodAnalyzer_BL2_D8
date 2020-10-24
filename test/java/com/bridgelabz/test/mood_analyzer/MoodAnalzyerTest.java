@@ -31,4 +31,11 @@ public class MoodAnalzyerTest
 		MoodAnalyzer moodObj = new MoodAnalyzer();
 		String result = moodObj.analyzeMood();
 	}
+	
+	@Test (expected  = MoodAnalysisException.class)
+	public void givenEmptyMood_ShouldThrowMoodAnalysisException()
+	{
+		MoodAnalyzer moodObj = new MoodAnalyzer("");
+		String result = moodObj.analyzeMood();
+	}
 }
