@@ -32,7 +32,7 @@ public class MoodAnalyzer {
 				return "HAPPY";
 		
 		} catch (NullPointerException e) {
-			throw new NullPointerException("Mood cannot be null");
+			return "HAPPY";
 		}
 	}
 
